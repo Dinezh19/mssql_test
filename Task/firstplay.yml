@@ -1,0 +1,8 @@
+---
+- name: Configure important user consistently
+  hosts: webservers
+  tasks:
+    - name: testuser1 exists with UID 4000
+      become: true
+      ansible.builtin.user:
+        name: testuser1
